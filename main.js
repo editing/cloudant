@@ -18,7 +18,8 @@ function Body($scope) {
 
 	/** @type {monaco.editor.IStandaloneCodeEditor} */
 	var editor;
-	$scope.login = function () {
+	$scope.login = function ($event) {
+		$event.preventDefault();
 		Cloudant("GET", "/_users/_all_docs?startkey=\"_design/\"&endkey=\"_design/\uFFFF\"").then((data, status) => {
 			$scope.status = status;
 			$scope.$apply();

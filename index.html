@@ -41,7 +41,7 @@
 		angular.module("app",["ngMaterial"]).controller("body",Body);
 	</script>
 	<div layout="row">
-		<form action="./" ng-submit="login()">
+		<form action="./" ng-submit="login($event)">
 			<md-input-container><input type="text" name="username" ng-model="user" placeholder="UserName" /></md-input-container>
 			<md-input-container><input type="password" name="password" ng-model="pass" placeholder="Password" /></md-input-container>
 			<md-input-container><input type="text" name="domain" ng-model="domain" placeholder="Domain" /></md-input-container>
