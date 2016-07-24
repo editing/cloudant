@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Angular Material style sheet -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js">
+
+    <script src="/node_modules/requirejs/require.js"></script>
+    <script src="/node_modules/monaco-editor/min/vs/loader.js"></script>
+	<script src="main.js"></script>
+
+	<style>
+		md-input-container {
+			margin-bottom:1px;
+		}
+
+		md-input-container .md-errors-spacer {
+			min-width:1px;
+			min-height:1px;
+		}
+	</style>
+</head>
+
+<body ng-controller="body">
+	<script>
+		angular.module("app",["ngMaterial"]).controller("body",Body);
+	</script>
+	<div layout="row">
+		<md-input-container><input type="text" ng-model="user" placeholder="UserName" /></md-input-container>
+		<md-input-container><input type="password" ng-model="pass" placeholder="Password" /></md-input-container>
+		<md-input-container><input type="text" ng-model="domain" placeholder="Domain" /></md-input-container>
+		<md-button class="md-raised" ng-click="login()">LogIn</md-button>
+	</div>
+	<div layout="row">
+		<div layout="column">
+			<div id="hierachy" style="width:200px;height:500px;border:1px solid grey"></div>
+		</div>
+		<div layout="column">
+			<div id="container" style="width:800px;height:500px;border:1px solid grey"></div>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>
