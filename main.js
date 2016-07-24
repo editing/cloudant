@@ -2,10 +2,9 @@
 
 require.config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' } });
 var PromiseMonaco = new Promise((resolve) => {
-	require(['vs/editor/editor.main'], function () {
-		resolve();
-	});
+	require(['vs/editor/editor.main'], () => resolve());
 });
+
 
 /* exported */
 function Body($scope) {
@@ -30,13 +29,12 @@ function Body($scope) {
 			$scope.status = status;
 			$scope.$apply();
 		}).then((data) => {
+			return PromiseMonaco.then(() => data);
+		}, (err) => console.error(err)).then((data) => {
 			if (!editor) {
 				editor = monaco.editor.create(document.getElementById('container'), { language: 'json' });
 				editor.getModel().detectIndentation(false,4);
 			}
-
-			return PromiseMonaco.then(() => data);
-		}, (err) => console.error(err)).then((data) => {
 
 			editor.setValue(JSON.stringify(data));
 		});
