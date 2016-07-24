@@ -36,7 +36,7 @@ function Body($scope) {
 				editor.getModel().detectIndentation(false,4);
 			}
 
-			editor.setValue(JSON.stringify(data));
+			editor.setValue(JSON.stringify(data,null,"\t"));
 		});
 	};
 }
