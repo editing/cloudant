@@ -1,6 +1,6 @@
 /* global $,monaco:monaco,require:require */
 
-require.config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' } });
+require.config({ paths: { 'vs': '/node_modules/monaco-editor/min/vs' } });
 var PromiseMonaco = new Promise((resolve) => {
 	require(['vs/editor/editor.main'], () => resolve());
 });
