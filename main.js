@@ -21,7 +21,7 @@ function Body($scope) {
 
 	PromiseMonaco.then(() => {
 		if (!hierachy) {
-			hierachy = monaco.editor.create(document.getElementById('container'), { language: 'json',wrappingColumn:-1 });
+			hierachy = monaco.editor.create(document.getElementById('hierachy'), { language: 'json',wrappingColumn:-1 });
 			hierachy.getModel().detectIndentation(false,4);
 		}
 	
