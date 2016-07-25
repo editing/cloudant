@@ -2,9 +2,6 @@
 
 require.config({ paths: { 'vs': '/node_modules/monaco-editor/min/vs' } });
 var PromiseMonaco = new Promise((resolve) => {
-	if(monaco)
-		return resolve();
-
 	require(['vs/editor/editor.main'], () => resolve());
 });
 
